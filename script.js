@@ -18,7 +18,7 @@ easyDif = () => {
         mid$$.classList.remove("hover");
         hard$$.classList.remove("hover");
         easy$$.classList.add("hover");
-        timer = 1400;
+        timer = 900;
     }
 }
 midDif = () => {
@@ -27,7 +27,7 @@ midDif = () => {
         mid$$.classList.remove("hover");
         hard$$.classList.remove("hover");
         mid$$.classList.add("hover");
-        timer = 1000;
+        timer = 700;
     }
 }
 hardDif = () => {
@@ -36,7 +36,7 @@ hardDif = () => {
         mid$$.classList.remove("hover");
         hard$$.classList.remove("hover");
         hard$$.classList.add("hover");
-        timer = 600;
+        timer = 500;
     }
 }
 easy$$.addEventListener('click', easyDif);
@@ -107,8 +107,8 @@ sortNumbers = () => {
     }
 } 
 addDifficulty = () => {
-    if(timer === 1400) return (' on Easy');
-    else if(timer === 1000) return (' on Medium');
+    if(timer === 900) return (' on Easy');
+    else if(timer === 700) return (' on Medium');
     else return (' on Hard');
 }   
 submitScore = (score) => {
@@ -118,14 +118,16 @@ submitScore = (score) => {
     let scoretext$$ = document.createTextNode(score);
     if(score > 0) {
         if(lb$$.rows.length === 0) {
-            scoretext$$.textContent = score + addDifficulty();
+            if(score < 10) scoretext$$.textContent = '0' + score + addDifficulty();
+            else scoretext$$.textContent = score + addDifficulty();
             score$$.appendChild(scoretext$$);
             row$$.appendChild(score$$);
             lb$$.appendChild(row$$);
         }
         else if(lb$$.rows.length < 7) {
             cont = 0;
-            scoretext$$.textContent = score + addDifficulty();
+            if(score < 10) scoretext$$.textContent = '0' + score + addDifficulty();
+            else scoretext$$.textContent = score + addDifficulty();
             for(let i = 0 ; i < lb$$.rows.length ; i++) {
                 if (scoretext$$.textContent === lb$$.rows[i].textContent) cont = 1;
             }
@@ -138,7 +140,8 @@ submitScore = (score) => {
         }
         else {
             if(lb$$.rows[6].textContent < score) {
-                lb$$.rows[6].textContent = score + addDifficulty();
+                if(score < 10) lb$$.rows[6].textContent = '0' + score + addDifficulty();
+                else lb$$.rows[6].textContent = score + addDifficulty();
                 sortNumbers();
             }
         }
