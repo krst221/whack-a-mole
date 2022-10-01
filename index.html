@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Whack a Hans Moleman!</title>
+</head>
+<body>
+    <h1>Whack-a-Hans Moleman!</h1>
+    <div>
+      <div class="menu">
+        <span>Select Difficulty</span>
+        <button id="easy" class="hover">Easy</button>
+        <button id="mid">Medium</button>
+        <button id="hard">Hard</button>
+      </div>
+    </div>
+    <span>Current SCORE</span><span class="score">0</span>
+    <button onClick="startGame()">Start!</button>
+    <button onClick="stopGame()">Stop!</button>
+    <span>Timer: </span><span id="timer">10</span>
+    <div class="container">
+      <div class="leader">
+        <span>Leaderboard (Top 7)</span>
+        <table id="lb">
+        </table>
+      </div>
+      <div class="game">
+        <div class="hole hole1">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole2">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole3">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole4">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole5">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole6">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole7">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole8">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole9">
+            <div class="mole"></div>
+        </div>  
+    </div>
+</body>
+</html>
